@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.meteor",
+    "\\client",
+    "\\imports",
+    "\\imports\\api",
+    "\\imports\\ui",
+    "\\imports\\ui\\auditory",
+    "\\server"
+  ],
+  "SelectedNode": "\\imports\\ui",
+  "PreviewInSolutionExplorer": false
+}
