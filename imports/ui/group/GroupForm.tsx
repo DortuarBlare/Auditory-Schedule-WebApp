@@ -20,9 +20,9 @@ export const GroupForm: React.FC<Props> = ({ group, onSubmit }) => {
     }
 
     return (
-        <div className="group-form">
+        <div className="schedule-form">
             <Property title="Группа:" value={<input type="text" value={name} onChange={e => setName(e.target.value)} />} />
-            <button className="button button_green" onClick={onClick}>Ок</button>
+            <button className="button buttonGreen" onClick={onClick}>Ок</button>
         </div>
     )
 }

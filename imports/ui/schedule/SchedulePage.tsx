@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { ScheduleCollection, AuditoryCollection, GroupCollection, Schedule } from '../../api/allCollections'
 import { ScheduleCard } from './ScheduleCard';
 import { ScheduleForm } from './ScheduleForm';
+import './SchedulePage.css'
 
 export const SchedulePage: React.FC = () => {
 
@@ -28,11 +29,11 @@ export const SchedulePage: React.FC = () => {
 
     return (
         <div className="schedule-page">
-            <div className="card">
-                <button className="button" onClick={() => setAddFormShow(!addFormShow)}>{`${addFormShow ? 'Закрыть' : 'Добавить'}`}</button>
-                {addFormShow &&
-                    <ScheduleForm onSubmit={onAddSubmit} />
-                }
+            <div className="card schedule-form">
+                <button className="button buttonDarkBlue" onClick={() => setAddFormShow(!addFormShow)}>
+                    {`${addFormShow ? 'Закрыть' : 'Добавить'}`}
+                </button>
+                {addFormShow && <ScheduleForm onSubmit={onAddSubmit} />}
             </div>
 
             <div>

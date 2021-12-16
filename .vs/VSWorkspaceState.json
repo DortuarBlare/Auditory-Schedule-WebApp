@@ -7,8 +7,10 @@
     "\\imports\\api",
     "\\imports\\ui",
     "\\imports\\ui\\auditory",
+    "\\imports\\ui\\group",
+    "\\imports\\ui\\schedule",
     "\\server"
   ],
-  "SelectedNode": "\\imports\\ui",
+  "SelectedNode": "\\client\\main.html",
   "PreviewInSolutionExplorer": false
 }

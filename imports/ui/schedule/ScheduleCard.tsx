@@ -4,6 +4,7 @@ import { useTracker } from 'meteor/react-meteor-data'
 import { ScheduleCollection, AuditoryCollection, GroupCollection, Schedule } from '../../api/allCollections'
 import { ScheduleForm } from './ScheduleForm'
 import { Property } from '../Property'
+import './ScheduleCard.css'
 
 
 interface Props {
@@ -26,11 +27,11 @@ export const ScheduleCard: React.FC<Props> = ({ schedule }) => {
     }
 
     return (
-        <div className="schedule-card">
+        <div className="card schedule-card">
             {isEdit ?
                 <ScheduleForm schedule={schedule} onSubmit={onEdit} />
                 :
-                <div className="schedule-card__main">
+                <div className="schedule-card-main">
 
                     <Property title="Аудитория:" value={auditoriesFromDB.find(aud => aud._id?.equals(schedule.auditory._id))?.name} />
                     <Property title="Группа:" value={groupsFromDB.find(gr => gr._id?.equals(schedule.group._id))?.name} />
@@ -39,9 +40,9 @@ export const ScheduleCard: React.FC<Props> = ({ schedule }) => {
                     <Property title="Время:" value={schedule.time} />
                 </div>
             }
-            <div className="schedule-card__controls">
-                <button className="button" onClick={() => setIsEdit(!isEdit)}>{isEdit ? 'Закрыть' : 'Редактировать'}</button>
-                <button className="button button_red" onClick={onDelete}>Удалить</button>
+            <div className="schedule-card-controls">
+                <button className="button buttonDarkBlue" onClick={() => setIsEdit(!isEdit)}>{isEdit ? 'Закрыть' : 'Редактировать'}</button>
+                <button className="button buttonRed" onClick={onDelete}>Удалить</button>
             </div>
         </div>
     )

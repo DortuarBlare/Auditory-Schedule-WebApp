@@ -4,23 +4,13 @@ import { BrowserRouter } from 'react-router-dom'
 import { SchedulePage } from './schedule/SchedulePage'
 import { AuditoryPage } from './auditory/AuditoryPage'
 import { GroupPage } from './group/GroupPage'
-import { Link } from 'react-router-dom'
+import { Header } from './Header'
 import './App.css'
 
 export const App: React.FC = () => {
     return (
         <BrowserRouter>
-            <p>
-                <Link className="header__link" to="/schedules">Schedules</Link>
-            </p>
-
-            <p>
-                <Link className="header__link" to="/auditories">Auditories</Link>
-            </p>
-
-            <p>
-                <Link className="header__link" to="/groups">Groups</Link>
-            </p>
+            <Header/>
 
             <div className="container">
                 <Routes>

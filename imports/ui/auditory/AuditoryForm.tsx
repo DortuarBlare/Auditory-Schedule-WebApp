@@ -20,9 +20,9 @@ export const AuditoryForm: React.FC<Props> = ({ auditory, onSubmit }) => {
     }
 
     return (
-        <div className="auditory-form">
+        <div className="schedule-form">
             <Property title="Аудитория:" value={<input type="text" value={name} onChange={e => setName(e.target.value)} />} />
-            <button className="button button_green" onClick={onClick}>Ок</button>
+            <button className="button buttonGreen" onClick={onClick}>Ок</button>
         </div>
     )
 }

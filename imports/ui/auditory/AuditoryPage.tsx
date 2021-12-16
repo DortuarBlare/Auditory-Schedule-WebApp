@@ -15,13 +15,12 @@ export const AuditoryPage: React.FC = () => {
     }
 
     return (
-        <div className = "auditory-page">
-            <div className = "card">
-                <button className = "button" onClick = {() => setAddFormShow(!addFormShow)}>
+        <div className= "schedule-page">
+            <div className= "card schedule-form">
+                <button className="button buttonDarkBlue" onClick={() => setAddFormShow(!addFormShow)}>
                     {`${addFormShow ? 'Закрыть' : 'Добавить'}`}
                 </button>
-                {addFormShow &&
-                    <AuditoryForm onSubmit = {onAddSubmit} />
+                {addFormShow && <AuditoryForm onSubmit = {onAddSubmit} />
                 }
             </div>
             <div>

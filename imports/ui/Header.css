@@ -1,36 +1,36 @@
 .header-outer {
-    /*background-color: rgba(42, 81, 255, 0.96);*/
-    position: sticky;
-    top: 0;
-}
-
-.header {
-    height: 100px;
-    color: black;
+    margin: auto;
+    max-width: 1200px;
+    height: 150px;
+    background-color: #3a7d87;
     display: flex;
-    gap: 20px;
-    align-items: center;
-    padding-left: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /*Отделяет от нижних элементов*/
+    font-family: Gill Sans, sans-serif;
+    font-size: 240%;
+    font-weight: bold;
+    border-radius: 10px 10px 10px 10px;
 }
 
-.header__title {
-    font-size: xxx-large;
+.header-title {
+    text-align: center;
+    color: white;
+    font-size: xx-large;
     font-weight: bold;
 }
 
-.header__line {
-    border-left: 2px solid rgb(255, 255, 255);
-    height: 80%;
+.header-line {
+    border-left: 2px solid white;
+    height: 30px;
     width: 1px;
 }
 
-.header__links {
+.header-links {
     display: flex;
     gap: 15px;
 }
 
-.header__link {
-    color: black;
+.header-link {
+    color: white;
+    font-size: x-large;
     text-decoration: none;
 }

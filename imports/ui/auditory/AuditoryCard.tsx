@@ -23,19 +23,17 @@ export const AuditoryCard: React.FC<Props> = ({ auditory }) => {
     }
 
     return (
-        <div className="auditory-card">
+        <div className="card schedule-card">
             {isEdit ?
                 <AuditoryForm auditory={auditory} onSubmit={onEdit} />
                 :
-                <div className="auditory-card__main">
+                <div className="schedule-card-main">
                     <Property title="Аудитория:" value={auditory.name} />
                 </div>
             }
-            <div className="auditory-card__controls">
-                <button className="button" onClick={() => setIsEdit(!isEdit)}>
-                    {isEdit ? 'Удалить' : 'Редактировать'}
-                </button>
-                <button className="button button_red" onClick={onDelete}>Удалить</button>
+            <div className="schedule-card-controls">
+                <button className="button buttonDarkBlue" onClick={() => setIsEdit(!isEdit)}>{isEdit ? 'Закрыть' : 'Редактировать'}</button>
+                <button className="button buttonRed" onClick={onDelete}>Удалить</button>
             </div>
         </div>
     )

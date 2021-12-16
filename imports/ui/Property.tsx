@@ -10,7 +10,7 @@ interface Props {
 
 export const Property: React.FC<Props> = ({ title, value, children }) => (
     <div className = "property">
-        <span className = "property__title">{title}</span>
-        {children ?? <span className = "property__value">{value}</span>}
+        <span className = "property-title">{title}</span>
+        {children ?? <span className = "property-value">{value}</span>}
     </div>
 )

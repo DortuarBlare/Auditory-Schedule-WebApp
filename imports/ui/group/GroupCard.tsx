@@ -23,19 +23,19 @@ export const GroupCard: React.FC<Props> = ({ group }) => {
     }
 
     return (
-        <div className="group-card">
+        <div className="card schedule-card">
             {isEdit ?
                 <GroupForm group={group} onSubmit={onEdit} />
                 :
-                    <div className="group-card__main">
+                <div className="schedule-card-main">
                         <Property title="Группа:" value={group.name} />
                     </div>
             }
-            <div className="group-card__controls">
-                <button className="button" onClick={() => setIsEdit(!isEdit)}>
+            <div className="schedule-card-controls">
+                <button className="button buttonDarkBlue" onClick={() => setIsEdit(!isEdit)}>
                     {isEdit ? 'Удалить' : 'Редактировать'}
                 </button>
-                <button className="button button_red" onClick={onDelete}>Удалить</button>
+                <button className="button buttonRed" onClick={onDelete}>Удалить</button>
             </div>
         </div>
     )

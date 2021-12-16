@@ -3,6 +3,7 @@ import { useTracker } from 'meteor/react-meteor-data'
 import React, { useState } from 'react'
 import { GroupCollection, AuditoryCollection, Schedule } from '../../api/allCollections'
 import { Property } from '../Property'
+import './ScheduleForm.css'
 
 interface Props {
     schedule?: Schedule
@@ -114,7 +115,7 @@ export const ScheduleForm: React.FC<Props> = ({ schedule, onSubmit }) => {
                 </select>
             } />
 
-            <button className="button button_green" onClick={onClick}>Ок</button>
+            <button className="button buttonGreen" onClick={onClick}>Ок</button>
         </div>
     )
 }

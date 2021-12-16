@@ -15,13 +15,12 @@ export const GroupPage: React.FC = () => {
     }
 
     return (
-        <div className="group-page">
-            <div className="card">
-                <button className="button" onClick={() => setAddFormShow(!addFormShow)}>
+        <div className="schedule-page">
+            <div className="card schedule-form">
+                <button className="button buttonDarkBlue" onClick={() => setAddFormShow(!addFormShow)}>
                     {`${addFormShow ? 'Закрыть' : 'Добавить'}`}
                 </button>
-                {addFormShow &&
-                    <GroupForm onSubmit={onAddSubmit} />
+                {addFormShow && <GroupForm onSubmit={onAddSubmit} />
                 }
             </div>
             <div>
