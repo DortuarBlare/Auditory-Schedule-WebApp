@@ -1,6 +1,7 @@
 import { Mongo } from 'meteor/mongo'
 import React, { useState } from 'react'
-import { Group, GroupCollection } from '../../api/allCollections'
+import { useTracker } from 'meteor/react-meteor-data';
+import { Group, GroupCollection, ScheduleCollection } from '../../api/allCollections'
 import { Property } from '../Property'
 import { GroupForm } from './GroupForm'
 
@@ -10,6 +11,7 @@ interface Props {
 }
 
 export const GroupCard: React.FC<Props> = ({ group }) => {
+    const schedulesFromDB = useTracker(() => ScheduleCollection.find({}).fetch())
 
     const [isEdit, setIsEdit] = useState(false)
 
@@ -19,6 +21,11 @@ export const GroupCard: React.FC<Props> = ({ group }) => {
     }
 
     const onDelete = () => {
+        schedulesFromDB.forEach(gr => {
+            if (gr.group._id.equals(group._id ?? new Mongo.ObjectID('')))
+                ScheduleCollection.remove(gr._id ?? new Mongo.ObjectID(''));
+        })
+
         GroupCollection.remove(group._id ?? new Mongo.ObjectID(''))
     }
 

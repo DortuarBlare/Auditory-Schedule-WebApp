@@ -35,7 +35,7 @@ export const ScheduleCard: React.FC<Props> = ({ schedule }) => {
 
                     <Property title="Аудитория:" value={auditoriesFromDB.find(aud => aud._id?.equals(schedule.auditory._id))?.name} />
                     <Property title="Группа:" value={groupsFromDB.find(gr => gr._id?.equals(schedule.group._id))?.name} />
-                    <Property title="Недели:" value={schedule.week} />
+                    <Property title="Неделя:" value={schedule.week} />
                     <Property title="День недели:" value={schedule.day} />
                     <Property title="Время:" value={schedule.time} />
                 </div>

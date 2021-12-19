@@ -11,9 +11,9 @@ Meteor.startup(() => {
     AuditoryCollection.find().count()
     GroupCollection.find().count()
 
-    ScheduleCollection.createIndex({ week: 1, day: 1, time: 1, auditory: 1 }, { unique: true })
+    //ScheduleCollection.createIndex({ week: 1, day: 1, time: 1, auditory: 1 }, { unique: true })
 
-    AuditoryCollection.createIndex({ name: 1 }, { unique: true })
+    //AuditoryCollection.createIndex({ name: 1 }, { unique: true })
 
-    GroupCollection.createIndex({ name: 1 }, { unique: true })
+    //GroupCollection.createIndex({ name: 1 }, { unique: true })
 });

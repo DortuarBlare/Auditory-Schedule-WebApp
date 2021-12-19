@@ -1,6 +1,7 @@
 import { Mongo } from 'meteor/mongo'
 import React, { useState } from 'react'
-import { Auditory, AuditoryCollection } from '../../api/allCollections'
+import { useTracker } from 'meteor/react-meteor-data';
+import { Auditory, AuditoryCollection, ScheduleCollection } from '../../api/allCollections'
 import { Property } from '../Property'
 import { AuditoryForm } from './AuditoryForm'
 
@@ -10,6 +11,7 @@ interface Props {
 }
 
 export const AuditoryCard: React.FC<Props> = ({ auditory }) => {
+    const schedulesFromDB = useTracker(() => ScheduleCollection.find({}).fetch())
 
     const [isEdit, setIsEdit] = useState(false)
 
@@ -19,6 +21,11 @@ export const AuditoryCard: React.FC<Props> = ({ auditory }) => {
     }
 
     const onDelete = () => {
+        schedulesFromDB.forEach(sched => {
+            if (sched.auditory._id.equals(auditory._id ?? new Mongo.ObjectID('')))
+                ScheduleCollection.remove(sched._id ?? new Mongo.ObjectID(''));
+        })
+
         AuditoryCollection.remove(auditory._id ?? new Mongo.ObjectID(''))
     }
 
