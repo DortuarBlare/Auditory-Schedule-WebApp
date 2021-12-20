@@ -23,8 +23,9 @@ export const SchedulePage: React.FC = () => {
     }
 
     const onFind2Submit = (week: number) => {
-
-        setSearch(finding2 => ({ ...finding2, week: week }))
+        if (week == 0) 
+            setSearch(finding => ({ ...finding, week: { $gte: 1, $lte: 18 } }))
+        else setSearch(finding2 => ({ ...finding2, week: week }))
     }
 
     const onAddSubmit = (schedule: Schedule) => {
@@ -46,7 +47,7 @@ export const SchedulePage: React.FC = () => {
 
             <div className="card schedule-form">
                 <button className="button buttonDarkBlue" onClick={() => {
-                    if (findFormShow) onFindSubmit('')
+                    if (find2FormShow) onFind2Submit(0)
                     setFind2FormShow(!find2FormShow);
                 }}>
                     {`${find2FormShow ? 'Закрыть' : 'Поиск на заданное число часов в указанную неделю'}`}

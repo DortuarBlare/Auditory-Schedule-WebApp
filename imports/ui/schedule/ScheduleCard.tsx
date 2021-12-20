@@ -32,7 +32,6 @@ export const ScheduleCard: React.FC<Props> = ({ schedule }) => {
                 <ScheduleForm schedule={schedule} onSubmit={onEdit} />
                 :
                 <div className="schedule-card-main">
-
                     <Property title="Аудитория:" value={auditoriesFromDB.find(aud => aud._id?.equals(schedule.auditory._id))?.name} />
                     <Property title="Группа:" value={groupsFromDB.find(gr => gr._id?.equals(schedule.group._id))?.name} />
                     <Property title="Неделя:" value={schedule.week} />

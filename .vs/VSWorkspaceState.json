@@ -11,6 +11,6 @@
     "\\imports\\ui\\schedule",
     "\\server"
   ],
-  "SelectedNode": "\\client\\main.css",
+  "SelectedNode": "\\imports\\ui\\schedule\\ScheduleCard.tsx",
   "PreviewInSolutionExplorer": false
 }
